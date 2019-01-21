@@ -1,0 +1,15 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+  collation: utf8mb4_general_ci
+development:
+  <<: *default
+  database: dropzone
+
+test:
+  <<: *default
+  database: dropzone_test
